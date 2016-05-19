@@ -5,9 +5,9 @@ compiler:
   - gcc
 env:
   matrix:
-    - USE_DEB=true  ROS_DISTRO="indigo" ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu
-    - USE_DEB=true  ROS_DISTRO="indigo" ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
+    - QUIET_CATKIN_COMMANDS=true USE_DEB=true  ROS_DISTRO="indigo" ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu
+    - QUIET_CATKIN_COMMANDS=true USE_DEB=true  ROS_DISTRO="indigo" ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
 install:
-  - git clone https://github.com/ros-industrial/industrial_ci.git .ci_config  
+  - git clone https://github.com/130s/industrial_ci.git -b suppress_msgs .ci_config  
 script: 
   - source .ci_config/travis.sh
